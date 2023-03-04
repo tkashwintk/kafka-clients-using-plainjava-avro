@@ -1,0 +1,24 @@
+{
+     "type": "record",
+     "namespace": "com.example.learnkafka",
+     "name": "Employee",
+     "fields": [
+       { "name": "id", "type": "int", "doc": "Employee ID" },
+       { "name": "name", "type": "string", "doc": "Employee name" },
+       { "name": "experience", "type": "float", "doc": "Experience in years" },
+       { "name": "is_allocated", "type": "boolean", "default":false, "doc": "Is employee allocated to a project?" },
+       { "name": "role",
+         "type": {
+           "type": "enum",
+           "name": "Role",
+           "symbols": [
+             "DEVELOPER",
+             "LEAD",
+             "ARCHITECT"
+           ]
+         },
+         "default": "Unknown"
+       }
+     ]
+}
+
